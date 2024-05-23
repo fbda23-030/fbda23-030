@@ -33,32 +33,3 @@ ball.addEventListener("click", () => {
   });
   ball.classList.toggle("active");
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector("form");
-
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-        const email = document.querySelector("input[type='email']").value;
-        const feedback = document.querySelector("textarea").value;
-
-        if (!isValidEmail(email)) {
-            alert("Please enter a valid email address.");
-            return;
-        }
-
-        if (feedback.trim() === "") {
-            alert("Please enter your feedback.");
-            return;
-        }
-
-        alert("Feedback submitted successfully!");
-        form.reset();
-    });
-
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-});
